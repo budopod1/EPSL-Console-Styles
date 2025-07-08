@@ -21,10 +21,16 @@ Bool#should colorize output {
 }
 
 Str#style [Str:text] with [TextStyle:style] {
+    if (!should_colorize) {
+        return text;
+    };
     return "{}{}\u001B[0m" % style.code % text;
 }
 
 Str#style [Str:text] with [[TextStyle]:styles] {
+    if (!should_colorize) {
+        return text;
+    };
     Str:result = [""].clone;
     for (TextStyle:style in styles) {
         [result].extend[style.code];
