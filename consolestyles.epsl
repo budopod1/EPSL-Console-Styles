@@ -24,7 +24,7 @@ Str#style [Str:text] with [TextStyle:style] {
     if (!should_colorize) {
         return text;
     };
-    return "{}{}\u001B[0m" % style.code % text;
+    return "{}{}\e[0m" % style.code % text;
 }
 
 Str#style [Str:text] with [[TextStyle]:styles] {
@@ -36,7 +36,7 @@ Str#style [Str:text] with [[TextStyle]:styles] {
         [result].extend[style.code];
     };
     [result].extend[text];
-    [result].extend["\u001B[0m"];
+    [result].extend["\e[0m"];
     return result;
 }
 
@@ -44,165 +44,165 @@ Str#style [Str:text] with [[TextStyle]:styles] {
 // https://github.com/termcolor/termcolor/blob/8e1621bc6907e45f9e15b52c9c7e2b04e6193084/src/termcolor/termcolor.py
 
 TextStyle#TXT_BOLD {
-    return TextStyle ["\u001B[1m"];
+    return TextStyle ["\e[1m"];
 }
 
 TextStyle#TXT_DARK {
-    return TextStyle ["\u001B[2m"];
+    return TextStyle ["\e[2m"];
 }
 
 TextStyle#TXT_UNDERLINE {
-    return TextStyle ["\u001B[4m"];
+    return TextStyle ["\e[4m"];
 }
 
 TextStyle#TXT_BLINK {
-    return TextStyle ["\u001B[5m"];
+    return TextStyle ["\e[5m"];
 }
 
 TextStyle#TXT_REVERSE {
-    return TextStyle ["\u001B[7m"];
+    return TextStyle ["\e[7m"];
 }
 
 TextStyle#TXT_CONCEALED {
-    return TextStyle ["\u001B[8m"];
+    return TextStyle ["\e[8m"];
 }
 
 TextStyle#TXT_STRIKE {
-    return TextStyle ["\u001B[9m"];
+    return TextStyle ["\e[9m"];
 }
 
 TextStyle#TXT_ON_BLACK {
-    return TextStyle ["\u001B[40m"];
+    return TextStyle ["\e[40m"];
 }
 
 TextStyle#TXT_ON_RED {
-    return TextStyle ["\u001B[41m"];
+    return TextStyle ["\e[41m"];
 }
 
 TextStyle#TXT_ON_GREEN {
-    return TextStyle ["\u001B[42m"];
+    return TextStyle ["\e[42m"];
 }
 
 TextStyle#TXT_ON_YELLOW {
-    return TextStyle ["\u001B[43m"];
+    return TextStyle ["\e[43m"];
 }
 
 TextStyle#TXT_ON_BLUE {
-    return TextStyle ["\u001B[44m"];
+    return TextStyle ["\e[44m"];
 }
 
 TextStyle#TXT_ON_MAGENTA {
-    return TextStyle ["\u001B[45m"];
+    return TextStyle ["\e[45m"];
 }
 
 TextStyle#TXT_ON_CYAN {
-    return TextStyle ["\u001B[46m"];
+    return TextStyle ["\e[46m"];
 }
 
 TextStyle#TXT_ON_LIGHT_GREY {
-    return TextStyle ["\u001B[47m"];
+    return TextStyle ["\e[47m"];
 }
 
 TextStyle#TXT_ON_DARK_GREY {
-    return TextStyle ["\u001B[100m"];
+    return TextStyle ["\e[100m"];
 }
 
 TextStyle#TXT_ON_LIGHT_RED {
-    return TextStyle ["\u001B[101m"];
+    return TextStyle ["\e[101m"];
 }
 
 TextStyle#TXT_ON_LIGHT_GREEN {
-    return TextStyle ["\u001B[102m"];
+    return TextStyle ["\e[102m"];
 }
 
 TextStyle#TXT_ON_LIGHT_YELLOW {
-    return TextStyle ["\u001B[103m"];
+    return TextStyle ["\e[103m"];
 }
 
 TextStyle#TXT_ON_LIGHT_BLUE {
-    return TextStyle ["\u001B[104m"];
+    return TextStyle ["\e[104m"];
 }
 
 TextStyle#TXT_ON_LIGHT_MAGENTA {
-    return TextStyle ["\u001B[105m"];
+    return TextStyle ["\e[105m"];
 }
 
 TextStyle#TXT_ON_LIGHT_CYAN {
-    return TextStyle ["\u001B[106m"];
+    return TextStyle ["\e[106m"];
 }
 
 TextStyle#TXT_ON_WHITE {
-    return TextStyle ["\u001B[107m"];
+    return TextStyle ["\e[107m"];
 }
 
 TextStyle#TXT_BLACK {
-    return TextStyle ["\u001B[30m"];
+    return TextStyle ["\e[30m"];
 }
 
 TextStyle#TXT_RED {
-    return TextStyle ["\u001B[31m"];
+    return TextStyle ["\e[31m"];
 }
 
 TextStyle#TXT_GREEN {
-    return TextStyle ["\u001B[32m"];
+    return TextStyle ["\e[32m"];
 }
 
 TextStyle#TXT_YELLOW {
-    return TextStyle ["\u001B[33m"];
+    return TextStyle ["\e[33m"];
 }
 
 TextStyle#TXT_BLUE {
-    return TextStyle ["\u001B[34m"];
+    return TextStyle ["\e[34m"];
 }
 
 TextStyle#TXT_MAGENTA {
-    return TextStyle ["\u001B[35m"];
+    return TextStyle ["\e[35m"];
 }
 
 TextStyle#TXT_CYAN {
-    return TextStyle ["\u001B[36m"];
+    return TextStyle ["\e[36m"];
 }
 
 TextStyle#TXT_LIGHT_GREY {
-    return TextStyle ["\u001B[37m"];
+    return TextStyle ["\e[37m"];
 }
 
 TextStyle#TXT_DARK_GREY {
-    return TextStyle ["\u001B[90m"];
+    return TextStyle ["\e[90m"];
 }
 
 TextStyle#TXT_LIGHT_RED {
-    return TextStyle ["\u001B[91m"];
+    return TextStyle ["\e[91m"];
 }
 
 TextStyle#TXT_LIGHT_GREEN {
-    return TextStyle ["\u001B[92m"];
+    return TextStyle ["\e[92m"];
 }
 
 TextStyle#TXT_LIGHT_YELLOW {
-    return TextStyle ["\u001B[93m"];
+    return TextStyle ["\e[93m"];
 }
 
 TextStyle#TXT_LIGHT_BLUE {
-    return TextStyle ["\u001B[94m"];
+    return TextStyle ["\e[94m"];
 }
 
 TextStyle#TXT_LIGHT_MAGENTA {
-    return TextStyle ["\u001B[95m"];
+    return TextStyle ["\e[95m"];
 }
 
 TextStyle#TXT_LIGHT_CYAN {
-    return TextStyle ["\u001B[96m"];
+    return TextStyle ["\e[96m"];
 }
 
 TextStyle#TXT_WHITE {
-    return TextStyle ["\u001B[97m"];
+    return TextStyle ["\e[97m"];
 }
 
 TextStyle#TXT_ON_RGB [W8:r], [W8:g], [W8:b] {
-    return TextStyle ["\u001B[48;2;{};{};{}m" % r % g % b];
+    return TextStyle ["\e[48;2;{};{};{}m" % r % g % b];
 }
 
 TextStyle#TXT_RGB [W8:r], [W8:g], [W8:b] {
-    return TextStyle ["\u001B[38;2;{};{};{}m" % r % g % b];
+    return TextStyle ["\e[38;2;{};{};{}m" % r % g % b];
 }
