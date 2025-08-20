@@ -25,7 +25,7 @@
 static bool should_colorize;
 static bool cached = false;
 
-static bool _get_should_colorize() {
+static bool _get_should_colorize(void) {
     // algorithm from
     // https://github.com/termcolor/termcolor/blob/8e1621bc6907e45f9e15b52c9c7e2b04e6193084/src/termcolor/termcolor.py
 
@@ -49,7 +49,7 @@ static bool _get_should_colorize() {
     return isatty(STDOUT_FILENO);
 }
 
-bool consolestyles_should_colorize() {
+bool consolestyles_should_colorize(void) {
     if (!cached) {
         should_colorize = _get_should_colorize();
         cached = true;
@@ -62,6 +62,6 @@ void consolestyles_override_should_colorize(bool enabled) {
     cached = true;
 }
 
-void consolestyles_reset_should_colorize() {
+void consolestyles_reset_should_colorize(void) {
     cached = false;
 }

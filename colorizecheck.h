@@ -6,10 +6,10 @@
 #define EPSL_COMMON_PREFIX "consolestyles_"
 #define EPSL_IMPLEMENTATION_LOCATION "colorizecheck.c"
 
-bool consolestyles_should_colorize();
+bool consolestyles_should_colorize(void);
 
 void consolestyles_override_should_colorize(bool enabled);
 
-void consolestyles_reset_should_colorize();
+void consolestyles_reset_should_colorize(void);
 
 #endif
